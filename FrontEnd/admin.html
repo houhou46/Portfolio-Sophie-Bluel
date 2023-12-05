@@ -13,16 +13,24 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 		crossorigin="anonymous" referrerpolicy="no-referrer">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./admin.css">
 </head>
 
 <body>
+	<header>
+		<div class="bandeau" id="images-modal">
+			<div class="interieur-bandeau">
+				<i class="fa-regular fa-pen-to-square"></i>
+				<p>Mode édition</p>
+			</div>
+		</div>
+	</header>
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 		<nav>
 			<ul>
 				<a href="">
-					<li>projets</li>
+					<li class="projets">projets</li>
 				</a>
 				<li>contact</li>
 				<a href="login.html">
@@ -32,6 +40,55 @@
 			</ul>
 		</nav>
 	</header>
+	<a href="#openmodale">Ouvrir la modale</a>
+	<div id="openmodale" class="modale-wrapper">
+		<div class="modale-content">
+			<h1>Galerie photo</h1>
+			<div class="images-container">
+			</div>
+			<div class="line"></div>
+			<button class="add-pic" id="openmodale2">Ajouter une photo</button>
+		</div>
+	</div>
+
+	<div id="modale2" class="modale-wrapper">
+		<div class="modale-content2">
+			<div class="icon-modal">
+				<i class="fa-solid fa-arrow-left"></i>
+				<i class="fa-solid fa-xmark" id="closemodale2"></i>
+			</div>
+			<h1>Ajout photo</h1>
+			<div class="modale-form">
+				<form action="#" method="get">
+					<label class="contenu-photo">
+						<input type="file" name="image" id="image" class="hidden">
+						<div class="interieur">
+							<i class="fa-regular fa-image"></i>
+							<div class="div-ajoutphoto">
+								<span class="ajout-photo">+ Ajouter photo</span>
+							</div>
+							<p>jpg, png: 4 mo max</p>
+						</div>
+					</label>
+					<label for="title">Titre</label>
+					<input type="text" name="title" id="title">
+					<label for="category">Catégorie</label>
+					<select name="category" id="category">
+						<option value="">Selectionner une categorie</option>
+						<option value="1">Tous</option>
+						<option value="2">Objets</option>
+						<option value="3">Appartements</option>
+						<option value="4">Hôtels & restaurants</option>
+					</select>
+					<!-- <input type="text" name="category" id="category"> -->
+					<div class="line"></div>
+					<div class="valider-button">
+						<button class="valider">Valider</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<main>
 		<section id="introduction">
 			<figure>
@@ -50,10 +107,10 @@
 		</section>
 		<section id="portfolio">
 			<h2>Mes Projets</h2>
-			<div class="btnprojet">
-				<button id="btnAll" class="filter">Tous</button>
-			</div>
+			<i class="fa-regular fa-pen-to-square"></i>
+			<p>modifier</p>
 			<div class="gallery">
+
 			</div>
 		</section>
 		<section id="contact">
@@ -78,7 +135,7 @@
 			</ul>
 		</nav>
 	</footer>
-	<script type="module" src="./api.js"></script>
+	<script type="module" src="./admin.js"></script>
 </body>
 
 </html>
