@@ -1,7 +1,6 @@
 import { getCategories, showGallery, getProjects } from './functions.js'
 // sélectionne un élément HTML avec la classe 'gallery' et on le stocke dans la variable gallery
 const btnprojet = document.querySelector('.btnprojet')
-const buttons = document.querySelectorAll('.filter')
 const projects = await getProjects();
 const categories = await getCategories()
 
@@ -14,6 +13,8 @@ categories.forEach(category => {
     button.classList.add('filter')
     btnprojet.appendChild(button);
 })
+
+const buttons = document.querySelectorAll('.filter')
 
 buttons.forEach(button => {
     button.addEventListener('click', (event) => {

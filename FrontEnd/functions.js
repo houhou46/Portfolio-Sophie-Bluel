@@ -35,9 +35,18 @@ async function deleteWork(idToDelete) {
     })
 }
 
+async function addWork(form) {
+    await fetch(`http://localhost:5678/api/works`, {
+        method: "POST",
+        headers: { 'Authorization': 'Bearer: ' + localStorage.getItem('token') },
+        body: form
+    })
+}
+
 export {
     getCategories,
     showGallery,
     getProjects,
-    deleteWork
+    deleteWork,
+    addWork
 }
