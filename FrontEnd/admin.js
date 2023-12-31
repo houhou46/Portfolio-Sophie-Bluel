@@ -101,7 +101,7 @@ function toggleInputFile(e) {
   // Si une image a été ajouté, cacher le bouton ajouter une image
   contenu.classList.toggle('center')
   contenuImg.classList.toggle('hidden')
-  if (contenuImg.getAttribute('src') == '') {
+  if (contenuImg.getAttribute('src') == '.assets/images/abajour-tahina.png') {
     contenuImg.src = URL.createObjectURL(e.target.files[0])
   } else {
     contenuImg.src = ''
