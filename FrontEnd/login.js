@@ -15,7 +15,6 @@ form.addEventListener('submit', async (event) => {
     })
     
     const data = await request.json()
-    console.log(data)
     if (data.token) {
         localStorage.setItem('token', data.token)
         window.location = '/admin.html'

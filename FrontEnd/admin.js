@@ -34,7 +34,6 @@ async function showProjects() {
 
     trashs.forEach((trash) => {
       trash.addEventListener('click', async (e) => {
-        console.log(e.target.getAttribute('data-id'))
         const idToDelete = e.target.getAttribute('data-id');
         await deleteWork(idToDelete)
         showProjects()
@@ -45,11 +44,11 @@ async function showProjects() {
 
 showProjects()
 
-const modale1 = document.getElementById('openmodale')
-const openModale1 = document.getElementById('images-modal')
+const modale1 = document.getElementById('openmodale') // ouverture première modale
+const openModale1 = document.getElementById('images-modal') // ouvrir la modale avec le bouton modifier 
 const closeModale1 = document.querySelector('#closemodale1') // pour fermer la première modale
 
-const modale2 = document.querySelector('#modale2') // deuxième modale 
+const modale2 = document.querySelector('#modale2') // ouvrir deuxième modale  avec ajouter photos
 const openModale2 = document.querySelector('#openmodale2') // bouton pour ouvrir la deuxième modale
 const closeModale2 = document.querySelector('#closemodale2') // pour fermer la deuxième modale 
 const returnGallery = document.getElementById('returnGallery') // pour retourner sur la gallery
@@ -98,10 +97,10 @@ const valider = document.getElementById("valider");
 image.addEventListener('change', toggleInputFile)
 
 function toggleInputFile(e) {
-  // Si une image a été ajouté, cacher le bouton ajouter une image
+
   contenu.classList.toggle('center')
   contenuImg.classList.toggle('hidden')
-  if (contenuImg.getAttribute('src') == '.assets/images/abajour-tahina.png') {
+  if (contenuImg.getAttribute('src') == './assets/images/abajour-tahina.png') {
     contenuImg.src = URL.createObjectURL(e.target.files[0])
   } else {
     contenuImg.src = ''
@@ -114,18 +113,13 @@ function toggleInputFile(e) {
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
 
-  
-
-  console.log(title.value)
-  console.log(category.value)
-  console.log(image.files[0])
 
   const data = new FormData()
   data.append('image', image.files[0])
   data.append('title', title.value)
   data.append('category', category.value)
 
-  // Verifier si les champs sont bien remplis avant d'ajouter
+  
   const valeurTitle = title.value
   const valeurCategory = category.value
   if (!image.files[0] || valeurTitle === "" || valeurCategory === "") {
@@ -142,7 +136,7 @@ form.addEventListener('submit', async (e) => {
 
   }
 
-  // Vider les champs image title et category
+  
  
 })
 

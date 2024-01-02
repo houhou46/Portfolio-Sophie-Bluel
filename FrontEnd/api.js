@@ -1,5 +1,5 @@
 import { getCategories, showGallery, getProjects } from './functions.js'
-// sélectionne un élément HTML avec la classe 'gallery' et on le stocke dans la variable gallery
+
 const btnprojet = document.querySelector('.btnprojet')
 const projects = await getProjects();
 const categories = await getCategories()
